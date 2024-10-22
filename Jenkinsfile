@@ -18,8 +18,6 @@ node {
         }
 
         stage('Deploy') {
-            echo 'Sending notification...'
-            bat 'mvn -version'
-    
+            echo 'Sending notification...'    
         }
 }
