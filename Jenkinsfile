@@ -14,7 +14,7 @@ node {
 
         stage('Test') {
             echo 'Running tests...'
-            bat 'call run_tests.bat'
+            bat 'call RunTest.bat'
         }
 
         stage('Deploy') {
