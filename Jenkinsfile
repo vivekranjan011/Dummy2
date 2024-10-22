@@ -9,12 +9,12 @@ node {
 
         stage('Build') {
             echo 'Running build...'
-            bat 'call Test.bat'
+            bat 'call App.bat'
         }
 
         stage('Test') {
             echo 'Running tests...'
-            bat 'call RunTest.bat'
+            bat 'call Test.bat'
         }
 
         stage('Deploy') {
