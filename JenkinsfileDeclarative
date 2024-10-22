@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    tools{
+        maven "MAVEN3"
+    }
+
+    stages {
+        stage('SCM') {
+            steps {
+                echo 'Process starting to pull git repo . . . . . .'
+                git branch: 'main', url: 'https://github.com/vivekranjan011/Dummy2.git'
+                
+            }
+        }
+         stage('App Run') {
+            steps {
+                echo 'Process starting to builld App ....... .'
+                bat 'App.bat'
+            }
+        }
+         stage('Test Run') {
+            steps {
+                echo 'Process starting to builld Test Run ....... .'
+                bat 'Test.bat'
+            }
+        }
+         stage('Deploy') {
+            steps {
+                echo 'Process for Deployment . . . . . .'
+            }
+        }
+    }
+}
